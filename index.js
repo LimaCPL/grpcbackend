@@ -56,9 +56,9 @@ const receiveMsg = (call, callback) => {
 
 //Server setup
 const server = new grpc.Server();
-server.bindAsync("0.0.0.0:50000",
+server.bindAsync("0.0.0.0:9090",
         grpc.ServerCredentials.createInsecure(),
-        (err, result) => !err ? (server.start(), console.log('Server Running on port 50000')) : ''
+        (err, result) => !err ? (server.start(), console.log('Server Running on port 9090')) : ''
 );
 
 server.addService(chatPackage.ChatService.service,
